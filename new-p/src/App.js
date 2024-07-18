@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header.jsx';
 import Loader from './components/Loader.jsx';
+import Banner from './components/Banner.jsx';
 
 
 
@@ -22,7 +23,8 @@ function App() {
       ) : (
         <>
           <Header />
-         
+          <Banner />
+          
         </>
       )}
     </div>
