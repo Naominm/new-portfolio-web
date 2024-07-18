@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header.jsx';
 import Loader from './components/Loader.jsx';
 import Banner from './components/Banner.jsx';
+import Navbar from './components/Navbar.jsx';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <>
           <Header />
           <Banner />
+          <Navbar />
           
         </>
       )}
