@@ -1,13 +1,274 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arvo&family=Climate+Crisis&family=Honk&family=Playfair+Display&family=Poor+Story&family=Rajdhani:wght@500&family=Roboto+Condensed:ital@1&family=Single+Day&display=swap');
+
+.font-secondary {
+  font-family: 'Rajdhani', sans-serif;
+}
+/* App.css */
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Fallback background color */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+
+.btn {
+  background-image: linear-gradient(
+    92.23deg,
+    #00bcd4 21.43%,  /* cyan */
+    #2196f3 53.63%,  /* light blue */
+    #1e88e5 100%,    /* blue */
+    #1565c0 117.04%  /* dark blue */
+  );
+  box-shadow: 0px 4.42184px 107.23px rgba(0, 188, 212, 0.51);
 }
+
+.btn:hover {
+  background-image: linear-gradient(
+    92.23deg,
+    #1565c0 21.43%,  /* dark blue */
+    #1e88e5 53.63%,  /* blue */
+    #2196f3 100%,    /* light blue */
+    #00bcd4 117.04%  /* cyan */
+  );
+}
+
+.gradient, .active {
+  background-image: linear-gradient(
+    92.23deg,
+    #1565c0 21.43%,  /* dark blue */
+    #1e88e5 53.63%,  /* blue */
+    #2196f3 100%,    /* light blue */
+    #00bcd4 117.04%  /* cyan */
+  );
+}
+
+.active {
+  background-image: linear-gradient(
+    92.23deg,
+    #1565c0 21.43%,
+    #1e88e5 53.63%,
+    #2196f3 100%,
+    #00bcd4 117.04%
+  );
+  color: white;
+  padding: 1rem;
+  border-radius: 100%;
+}
+
+@layer base {
+  body {
+    @apply text-lg leading-8 text-white;
+  }
+  h2 {
+    @apply text-[32px] mb-6 tracking-[10%] uppercase;
+  }
+  h3 {
+    @apply font-semibold leading-[46px] text-[26px] mb-6;
+  }
+  .btn {
+    @apply font-medium rounded-full text-white;
+  }
+  .btn-sm {
+    @apply h-[48px] px-6 text-sm;
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base;
+  }
+  .btn-link {
+    @apply text-base;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#00bcd4] to-[#1e88e5]
+            font-bold hover:from-[#1e88e5] hover:to-[#00bcd4];
+  }
+  .section {
+    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+  }
+}
+
+.homeContainerPicText {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  position: absolute;
+  top: 0;
+  margin-top: 0;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .homeContainerPicText {
+    flex-direction: column;
+    margin-left: 10%;
+    height: auto;
+  }
+}
+.homeContainerPic {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .homeContainerPic {
+    width: 350px;
+    height: 380px;
+    margin-top: 20%;
+    margin-left: 25%;
+  }
+}
+.homeImageBoarder {
+  width: 75%;
+  height: 50vh;
+  background-color: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  animation: morph 8s ease-in-out 1s infinite;
+  background-blend-mode: multiply;
+  box-shadow: inset none;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .homeImageBoarder {
+    width: 380px;
+    height: 380px;
+  }
+}
+.homeImage {
+  width: 90%;
+  height: 45vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.homeImage img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: morph 8s ease-in-out 1s infinite;
+  background-blend-mode: multiply;
+  box-shadow: inset 0 0 0 30px hsl(0deg 0% 50% / 0%);
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  overflow: hidden;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+@keyframes foldBorder {
+  from {
+    transform: perspective(900px) rotateY(0deg) scale(1) skew(0deg, 0deg);
+    border-radius: 50% / 45%;
+  }
+  to {
+    transform: perspective(900px) rotateY(0deg) scale(0.8) skew(0deg, -0deg);
+    border-radius: 45% / 50%;
+  }
+}
+/* src/index.css or a separate CSS file */
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.aboutContainerImage{
+  position: relative;
+  margin-top: 5%;
+  height: 80vh;
+  width: 50%;
+  border-radius: 20px;
+  /* background-color: transparent; */
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: #df06f3;
+ 
+  /* justify-content: space-around; */
+}
+@media (max-width: 768px) {
+  .aboutContainerImage {
+margin-top: 4%;
+height: 250px;
+margin-left: 2%;
+background:#C5BBBB;
+width: 250px;
+
+
+
+  }
+}
+
+.aboutContainerImage img{
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease; /* Add transition for smooth hover effect */
+  transform: rotate(8deg);
+}
+.aboutContainerImage img:hover {
+transform: rotate(0deg); /* Rotate the image back to 0 degrees on hover */
+}
+/* src/styles/global.css */
+.octagon-icon {
+  clip-path: polygon(
+      30% 0%, 70% 0%,
+      100% 30%, 100% 70%,
+      70% 100%, 30% 100%,
+      0% 70%, 0% 30%
+  );
+  background: transparent;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.octagon-icon:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
