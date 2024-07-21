@@ -3,6 +3,7 @@ import Header from './components/Header.jsx';
 import Loader from './components/Loader.jsx';
 import Banner from './components/Banner.jsx';
 import Navbar from './components/Navbar.jsx';
+import About from './components/About.jsx';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Header />
           <Banner />
           <Navbar />
+          <About />
           
         </>
       )}
