@@ -4,7 +4,7 @@ import Loader from './components/Loader.jsx';
 import Banner from './components/Banner.jsx';
 import Navbar from './components/Navbar.jsx';
 import About from './components/About.jsx';
-
+import Services from './components/Services.jsx';
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
           <Banner />
           <Navbar />
           <About />
-          
+          <Services />
         </>
       )}
     </div>
