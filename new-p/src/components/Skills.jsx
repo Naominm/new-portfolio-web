@@ -12,8 +12,8 @@ const skills = [
     { name: 'Azure', icon: <SiMicrosoftazure />, color: '#0078d4' },
     { name: 'Git', icon: <FaGit />, color: '#f05032' },
     { name: 'GitHub', icon: <FaGithub />, color: '#181717' },
-    { name: 'Figma', icon: <SiFigma />, color: '#F24E1E' }, // Figma icon and color
-    { name: 'Python', icon: <FaPython />, color: '#3776AB' }, // Python icon and color
+    { name: 'Figma', icon: <SiFigma />, color: '#F24E1E' }, 
+    { name: 'Python', icon: <FaPython />, color: '#3776AB' }, 
 ];
 
 export default skills;

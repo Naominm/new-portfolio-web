@@ -5,6 +5,7 @@ import Banner from './components/Banner.jsx';
 import Navbar from './components/Navbar.jsx';
 import About from './components/About.jsx';
 import Services from './components/Services.jsx';
+import Projects from './components/Projects.jsx';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Navbar />
           <About />
           <Services />
+          <Projects />
         </>
       )}
     </div>
