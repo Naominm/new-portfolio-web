@@ -6,6 +6,7 @@ import Navbar from './components/Navbar.jsx';
 import About from './components/About.jsx';
 import Services from './components/Services.jsx';
 import Projects from './components/Projects.jsx';
+import Achievements from './components/Achievements.jsx';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <About />
           <Services />
           <Projects />
+          <Achievements />
         </>
       )}
     </div>
