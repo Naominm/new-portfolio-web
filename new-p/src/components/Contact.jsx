@@ -1,40 +1,73 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from '@emailjs/browser';
+import { AiOutlineCheckCircle, AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 function Contact() {
+  const [emailStatus, setEmailStatus] = useState('idle'); // idle, sending, success, error
+
   useEffect(() => {
     AOS.init({
       easing: 'ease-in-out',
     });
 
-    // Initialize EmailJS with the public key
-    emailjs.init('QzP77jUEK6t5JPxC2');
+    // Initialize EmailJS with the public key from environment variables
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
   }, []);
 
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setEmailStatus('sending');
 
     emailjs
-      .sendForm('service_m2n2luw', 'template_78lb1uj', form.current)
+      .sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current)
       .then(
         (result) => {
           console.log('Email sent successfully:', result.text);
-          alert('Email sent successfully!');
+          setEmailStatus('success');
+          setTimeout(() => {
+            setEmailStatus('idle');
+          }, 5000); // Reset status after 5 seconds
         },
         (error) => {
           console.error('Email sending error:', error.text);
-          alert('Failed to send email. Please try again.');
+          setEmailStatus('error');
+          setTimeout(() => {
+            setEmailStatus('idle');
+          }, 5000); // Reset status after 5 seconds
         }
       );
     e.target.reset();
   };
 
+  const renderButtonContent = () => {
+    switch (emailStatus) {
+      case 'sending':
+        return (
+          <>
+            <AiOutlineLoading3Quarters className="animate-spin mr-2" />
+            Sending...
+          </>
+        );
+      case 'success':
+        return (
+          <>
+            <AiOutlineCheckCircle className="mr-2" />
+            Sent
+          </>
+        );
+      case 'error':
+        return 'Send Message';
+      default:
+        return 'Send Message';
+    }
+  };
+
   return (
-    <section id="contact" className="lg:section py-16">
+    <section id="contact" className="lg:section py-0">
       <div className="container mx-auto p-5">
         <div className="ml-40 flex flex-col lg:flex-row items-center">
           <div data-aos="flip-up" data-aos-duration="1500" className="flex-1 flex flex-col justify-start items-start lg:mb-0">
@@ -61,13 +94,6 @@ function Contact() {
             className="mr-40 text-blue-800 flex-1 bg-white bg-opacity-10 shadow-lg rounded-xl flex flex-col gap-y-4 p-6 max-w-md mx-auto lg:ml-8"
           >
             <input
-              name="user_name"
-              className="border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all"
-              placeholder="Full Name"
-              type="text"
-              required
-            />
-            <input
               name="user_email"
               className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all"
               placeholder="Email Address"
@@ -89,10 +115,13 @@ function Contact() {
               required
             ></textarea>
             <button
-              className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 transition-all duration-300"
+              className={`bg-blue-600 text-white py-2 px-4 rounded-md shadow-md transition-all duration-300 flex items-center justify-center ${
+                emailStatus === 'sending' ? 'cursor-not-allowed' : ''
+              }`}
               type="submit"
+              disabled={emailStatus === 'sending'}
             >
-              Send Message
+              {renderButtonContent()}
             </button>
           </form>
         </div>
