@@ -19,6 +19,8 @@
 
 
 
+
+
 .btn {
   background-image: linear-gradient(
     92.23deg,
@@ -198,9 +200,9 @@
 }
 /* src/index.css or a separate CSS file */
 .loader {
-  border: 8px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 8px solid #3498db;
+  border-top: 2px solid #3498db;
   width: 60px;
   height: 60px;
   animation: spin 2s linear infinite;
@@ -247,8 +249,7 @@ width: 250px;
 }
 .aboutContainerImage img:hover {
 transform: rotate(0deg); /* Rotate the image back to 0 degrees on hover */
-}
-/* src/styles/global.css */
+}/* src/styles/global.css */
 .octagon-icon {
   clip-path: polygon(
       30% 0%, 70% 0%,
@@ -256,7 +257,11 @@ transform: rotate(0deg); /* Rotate the image back to 0 degrees on hover */
       70% 100%, 30% 100%,
       0% 70%, 0% 30%
   );
-  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
   transition: transform 0.3s, background-color 0.3s;
   cursor: pointer;
 }
@@ -268,7 +273,7 @@ transform: rotate(0deg); /* Rotate the image back to 0 degrees on hover */
 
 .icon-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-

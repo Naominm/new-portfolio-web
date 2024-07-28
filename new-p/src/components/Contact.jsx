@@ -12,8 +12,8 @@ function Contact() {
       easing: 'ease-in-out',
     });
 
-    // Initialize EmailJS with the public key from environment variables
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+    // Initialize EmailJS with the public key
+    emailjs.init('iQYIstvoyhBP5t4uH');
   }, []);
 
   const form = useRef();
@@ -23,7 +23,7 @@ function Contact() {
     setEmailStatus('sending');
 
     emailjs
-      .sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current)
+      .sendForm('service_m2n2luw', 'template_28diysx', form.current)
       .then(
         (result) => {
           console.log('Email sent successfully:', result.text);
@@ -93,6 +93,7 @@ function Contact() {
             onSubmit={sendEmail}
             className="mr-40 text-blue-800 flex-1 bg-white bg-opacity-10 shadow-lg rounded-xl flex flex-col gap-y-4 p-6 max-w-md mx-auto lg:ml-8"
           >
+           
             <input
               name="user_email"
               className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all"

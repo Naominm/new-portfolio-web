@@ -5,9 +5,9 @@ import { SiFigma } from 'react-icons/si'; // Figma icon
 import { FaPython } from 'react-icons/fa'; // Python icon
 
 const skills = [
-    { name: 'JavaScript', icon: <FaJs />, color: '#f7df1e' },
+    { name: 'JS', icon: <FaJs />, color: '#f7df1e' },
     { name: 'React', icon: <FaReact />, color: '#61dafb' },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#38b2ac' },
+    { name: 'Tailwind ', icon: <SiTailwindcss />, color: '#38b2ac' },
     { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' },
     { name: 'Azure', icon: <SiMicrosoftazure />, color: '#0078d4' },
     { name: 'Git', icon: <FaGit />, color: '#f05032' },
