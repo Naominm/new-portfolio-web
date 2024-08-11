@@ -67,10 +67,10 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="lg:section py-0">
-      <div className="container mx-auto p-5">
-        <div className="ml-40 flex flex-col lg:flex-row items-center">
-          <div data-aos="flip-up" data-aos-duration="1500" className="flex-1 flex flex-col justify-start items-start lg:mb-0">
+    <section id="contact" className="lg:section py-10">
+      <div className="container mx-auto px-5">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div data-aos="flip-up" data-aos-duration="1500" className="flex-1 flex flex-col justify-start items-start lg:mb-0 lg:ml-40">
             <div>
               <h4 className="text-xl uppercase text-blue-600 font-medium mb-2 tracking-wide lg:text-4xl font-secondary">Get in touch</h4>
               <h2 className="text-4xl md:text-3xl leading-none mb-4 text-gray-100 lg:text-4xl font-secondary">
@@ -91,9 +91,8 @@ function Contact() {
             data-aos-duration="2500"
             ref={form}
             onSubmit={sendEmail}
-            className="mr-40 text-blue-800 flex-1 bg-white bg-opacity-10 shadow-lg rounded-xl flex flex-col gap-y-4 p-6 max-w-md mx-auto lg:ml-8"
+            className="text-blue-800 flex-1 bg-white bg-opacity-10 shadow-lg rounded-xl flex flex-col gap-y-4 p-6 max-w-md mx-auto lg:max-w-lg lg:mr-40"
           >
-           
             <input
               name="user_email"
               className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all"

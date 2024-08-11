@@ -68,9 +68,9 @@ function Projects() {
     ];
 
     return (
-        <section id="projects" className="section py-0 mt-10">
+        <section id="projects" className="section py-0 mt-10 mb-10">
             <div className="container mx-auto px-5">
-                <h2 className="text-accent text-center font-secondary text-4xl font-bold ">Projects</h2>
+                <h2 className="text-accent text-center font-secondary text-4xl sm:text-3xl text-2xl font-bold">Projects</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     {projects.map((project, index) => (
                         <div
@@ -86,15 +86,15 @@ function Projects() {
                                 alt={project.title}
                             />
                             <div className="absolute inset-0 flex flex-col justify-center items-center p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-50 text-center text-white">
-                                <h3 className="text-2xl mb-2">{project.title}</h3>
-                                <p className="mb-4">{project.description}</p>
-                                <p className="mb-4">{project.technologies}</p>
+                                <h3 className="text-2xl sm:text-xl text-lg mb-2">{project.title}</h3>
+                                <p className="mb-4 text-base sm:text-sm text-xs">{project.description}</p>
+                                <p className="mb-4 text-base sm:text-sm text-xs">{project.technologies}</p>
                                 <div className="flex space-x-4">
                                     <a
                                         href={project.liveDemo}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded-lg"
+                                        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded-lg text-sm sm:text-xs"
                                     >
                                         Live Demo
                                     </a>
@@ -102,7 +102,7 @@ function Projects() {
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded-lg"
+                                        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded-lg text-sm sm:text-xs"
                                     >
                                         GitHub
                                     </a>
