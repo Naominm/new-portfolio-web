@@ -79,7 +79,7 @@ function Contact({ setNavbarVisible }) {
   };
 
   return (
-    <section id="contact" className="lg:section py-10">
+    <section id="contact" className="lg:section py-10 ">
       <div className="container mx-auto px-5">
         <div className="flex flex-col lg:flex-row items-center gap-6">
           <div
@@ -111,7 +111,7 @@ function Contact({ setNavbarVisible }) {
             onSubmit={sendEmail}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            className="text-blue-800 flex-1 bg-white bg-opacity-10 shadow-lg rounded-xl flex flex-col gap-y-4 p-6 max-w-lg mx-auto lg:max-w-xl lg:mr-40"
+            className="text-blue-800 flex-1 bg-white bg-opacity-10 shadow-lg rounded-xl flex flex-col gap-y-4 p-6 max-w-lg mx-auto lg:max-w-xl lg:mr-40 mb-0.5"
             style={{ maxHeight: 'calc(100vh - 200px)' }} // Adjust the value as needed
           >
             <input

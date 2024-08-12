@@ -3,7 +3,7 @@ import skills from '../components/Skills';
 
 const Services = () => {
     return (
-        <section id='services' className='section mb-10'>
+        <section id='services' className='section mb-40'>
             <div className='container mx-auto'>
                 <h2 className='h2 text-accent text-center font-secondary text-4xl font-bold'>Skills</h2>
                 <div className='flex flex-wrap justify-center'>

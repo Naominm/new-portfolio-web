@@ -277,3 +277,8 @@ transform: rotate(0deg); /* Rotate the image back to 0 degrees on hover */
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 440px) {
+  .achievements-text {
+    font-size: 0.875rem; /* Adjust size as needed */
+  }
+}
