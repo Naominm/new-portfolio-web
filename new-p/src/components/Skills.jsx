@@ -13,7 +13,7 @@ const skills = [
     { name: 'Git', icon: <FaGit />, color: '#f05032' },
     { name: 'GitHub', icon: <FaGithub />, color: '#181717' },
     { name: 'Figma', icon: <SiFigma />, color: '#F24E1E' }, 
-    { name: 'Python', icon: <FaPython />, color: '#3776AB' }, 
+   
 ];
 
 export default skills;

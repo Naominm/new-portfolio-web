@@ -3,7 +3,7 @@ import mlsaLogo from '../assets/transparent.png';
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="section py-10 ">
+    <section id="achievements" className="section py-10 mt-5 ">
       <div className="container mx-10 p-5">
         <h2 className="text-white text-center text-4xl mb-10 lg:text-4xl font-secondary font-semibold uppercase">Achievements</h2>
         <div className="flex justify-center items-center">
