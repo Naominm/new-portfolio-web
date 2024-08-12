@@ -9,7 +9,6 @@ import Projects from './components/Projects.jsx';
 import Achievements from './components/Achievements.jsx';
 import Contact from './components/Contact.jsx';
 
-
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -29,12 +28,12 @@ function App() {
         <>
           <Header />
           <Banner />
-          <Navbar />
+          <Navbar />  {/* Navbar with links to sections, including Contact */}
           <About />
           <Services />
           <Projects />
           <Achievements />
-          <Contact />
+          <Contact />  {/* Contact section linked from Navbar */}
         </>
       )}
     </div>
