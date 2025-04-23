@@ -31,7 +31,7 @@ function Projects() {
             liveDemo: "https://mutc-website-wheat.vercel.app/",
             github: "https://github.com/Naominm/mutc-website.git",
             technologies: "React, Typescript,",
-            description: "An extension of the Fresh Farm project with additional features.",
+            description: "A web application for a tech club",
         },
         {
             title: "Zarph Tours",
