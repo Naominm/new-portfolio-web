@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import mainImage from '../assets/third.jpg';  // Ensure this path is correct
+import img1 from '../assets/first.jpg';  // Ensure this path is correct
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import AOS from 'aos';
@@ -56,7 +56,7 @@ function Banner() {
             <div className="homeContainerPic">
               <div className="homeImageBoarder">
                 <div className="homeImage">
-                  <img src={mainImage} alt="Profile of Naomi Mbugua" />
+                  <img src={img1} alt="Profile of Naomi Mbugua" />
                 </div>
               </div>
             </div>

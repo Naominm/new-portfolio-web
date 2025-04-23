@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CountUp from 'react-countup';
-import profile from '../assets/first.jpg';
+import img1 from '../assets/first.jpg';
 import CardList from '../components/CardList';
 
 function About() {
@@ -24,7 +24,7 @@ function About() {
           <div data-aos="fade-right" data-aos-duration='2000' className='flex-1 flex justify-center lg:justify-start'>
             <div className="aboutContainerImage">
               <img 
-                src={profile} 
+                src={img1} 
                 alt="A black lady standing" 
                 className="w-full h-auto max-h-[200px] sm:max-h-none" 
               />
