@@ -20,7 +20,7 @@ function Projects() {
         {
             title: "Blogit",
             imgSrc: img1,
-            liveDemo: "https://gaming-lilac-kappa.vercel.app/",
+            liveDemo: "https://blog-it-git-master-naomi-mbuguas-projects.vercel.app/",
             github: "https://github.com/Naominm/blogIt.git",
             technologies: "React,Material UI, NodeJs, Express, PostgreSQl",
             description: "A full stack application blogging page",
