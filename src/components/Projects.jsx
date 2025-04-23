@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import img1 from "../assets/freshfarm.png";
-import img2 from "../assets/freshfarm2.png";
+import img1 from "../assets/blogit.png";
+import img2 from "../assets/mutc.png";
 import img3 from "../assets/elingo.png";
 import img4 from "../assets/secondHand.png";
-import img5 from "../assets/portfolio.png";
-import img6 from "../assets/kienyeji.png";
+import img5 from "../assets/zarph.png";
+import img6 from "../assets/urban-haven.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -18,21 +18,31 @@ function Projects() {
 
     const projects = [
         {
-            title: "Fresh Farm",
+            title: "Blogit",
             imgSrc: img1,
             liveDemo: "https://gaming-lilac-kappa.vercel.app/",
-            github: "https://github.com/Naominm/Tomato-diagonise.git",
-            technologies: "Tailwind CSS, React",
-            description: "A platform to manage and diagnose tomato plant diseases.",
+            github: "https://github.com/Naominm/blogIt.git",
+            technologies: "React,Material UI, NodeJs, Express, PostgreSQl",
+            description: "A full stack application blogging page",
         },
         {
-            title: "Fresh Farm",
+            title: "MUTC",
             imgSrc: img2,
-            liveDemo: "https://ferrari-eight.vercel.app/",
-            github: "https://github.com/Naominm/Tomato-diagonise.git",
-            technologies: "Tailwind CSS, React",
+            liveDemo: "https://mutc-website-wheat.vercel.app/",
+            github: "https://github.com/Naominm/mutc-website.git",
+            technologies: "React, Typescript,",
             description: "An extension of the Fresh Farm project with additional features.",
         },
+        {
+            title: "Zarph Tours",
+            imgSrc: img5,
+            liveDemo: "https://zaph-tours-flame.vercel.app/",
+            github: "https://github.com/Naominm/zaph-tours.git",
+            technologies: "React,CSS",
+            description: "Frontend application for a travel company",
+        },
+       
+        
         {
             title: "Elingo",
             imgSrc: img3,
@@ -50,20 +60,12 @@ function Projects() {
             description: "A marketplace for buying and selling second-hand goods.",
         },
         {
-            title: "Portfolio",
-            imgSrc: img5,
-            liveDemo: "https://naomimbugua.vercel.app/",
-            github: "https://github.com/Naominm/Portfolio.git",
-            technologies: "CSS, React",
-            description: "My personal portfolio showcasing my projects and skills.",
-        },
-        {
-            title: "Kieyeji",
+            title: "Urban Haven",
             imgSrc: img6,
-            liveDemo: "https://chicken-selling.netlify.app",
-            github: "https://github.com/yourusername/kieyeji",
-            technologies: "HTML, CSS, JS",
-            description: "An e-commerce site for selling traditional chicken.",
+            liveDemo: "https://urban-haven-phi.vercel.app/",
+            github: "https://github.com/Naominm/URBAN-HAVEN.git",
+            technologies: "HTML CSS",
+            description: "Appartment website",
         },
     ];
 

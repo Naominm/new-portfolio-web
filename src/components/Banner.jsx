@@ -23,11 +23,7 @@ function Banner() {
               <TypeAnimation sequence={[
                   'Web Developer',
                   2000,
-                  'Front-End Developer',
-                  2000,
-                  'Graphics Designer',
-                  2000,
-                  'UI/UX Designer',
+                  'FullStack Developer',
                   2000,
                 ]}
                 speed={50}
@@ -37,7 +33,7 @@ function Banner() {
               />
             </div>
             <p className='mb-12 max-w-lg mx-auto lg:mx-0'>
-              I specialize in creating stunning websites and intuitive user interfaces. With a passion for design and a commitment to quality, I ensure every project I undertake exceeds expectations.
+              I specialize in creating stunning websites and clean user interfaces. With a passion for design and a commitment to quality, I ensure every project I undertake exceeds expectations.
             </p>
             <div className='flex max-w-max lg:mx-0 mx-auto gap-x-6 items-center mb-16'>
               <a href="https://drive.google.com/file/d/1kauRosxVgY6ddRol1oTW8RKWVQESaBDp/view?usp=sharing" target='_blank' rel='noopener noreferrer'>

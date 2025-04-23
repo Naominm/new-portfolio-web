@@ -44,20 +44,20 @@ function About() {
               </div>
               <div className='text-center sm:text-left'>
                 <div className='text-[40px] font-secondary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={30} duration={8} /> : null} +
+                  {inView ? <CountUp start={0} end={10} duration={8} /> : null} +
                 </div>
                 <div className='font-secondary text-md tracking-[1px]'>
                   Projects <br /> completed
                 </div>
               </div>
-              <div className='text-center sm:text-left'>
+              {/* <div className='text-center sm:text-left'>
                 <div className='text-[40px] font-secondary text-gradient mb-2'>
-                  {inView ? <CountUp start={100} end={5} duration={5} /> : null} +
+                  {inView ? <CountUp start={100} end={1} duration={5} /> : null} +
                 </div>
                 <div className='font-secondary text-md tracking-[1px]'>
                   Clients
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className='flex justify-center sm:justify-start'>
               <a href="#contact"><button className='btn btn-lg p-4 text-xl font-secondary'>Work With Me</button></a>
