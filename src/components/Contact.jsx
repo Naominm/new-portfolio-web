@@ -96,7 +96,7 @@ function Contact({ setNavbarVisible }) {
                 Something Great!
               </h2>
               <p className="text-gray-100 mb-2 font-secondary">
-                <strong>Email:</strong> naomimbugua536@gmail.com
+                <strong>Email:</strong> naomimbugua349@gmail.com
               </p>
               <p className="text-gray-100 font-secondary">
                 <strong>Phone:</strong> +254703937319
