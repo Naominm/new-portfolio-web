@@ -24,7 +24,7 @@ function About() {
           <div data-aos="fade-right" data-aos-duration='2000' className='flex-1 flex justify-center lg:justify-start'>
             <div className="aboutContainerImage">
               <img 
-                src={img1} 
+                src="../assets/third.jpg" 
                 alt="A black lady standing" 
                 className="w-full h-auto max-h-[200px] sm:max-h-none" 
               />
