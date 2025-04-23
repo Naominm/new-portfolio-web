@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CountUp from 'react-countup';
-import profile from '../assets/new-b.png';
+import profile from '../assets/g1.jpg';
 import CardList from '../components/CardList';
 
 function About() {
