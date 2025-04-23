@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import mainImage from '../assets/g2.jpg';  // Ensure this path is correct
+import mainImage from '../assets/third.jpg';  // Ensure this path is correct
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import AOS from 'aos';
