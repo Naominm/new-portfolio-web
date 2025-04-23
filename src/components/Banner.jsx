@@ -36,7 +36,7 @@ function Banner() {
               I specialize in creating stunning websites and clean user interfaces. With a passion for design and a commitment to quality, I ensure every project I undertake exceeds expectations.
             </p>
             <div className='flex max-w-max lg:mx-0 mx-auto gap-x-6 items-center mb-16'>
-              <a href="https://drive.google.com/file/d/1kauRosxVgY6ddRol1oTW8RKWVQESaBDp/view?usp=sharing" target='_blank' rel='noopener noreferrer'>
+              <a href="https://drive.google.com/file/d/138Hvp37jXNYD64LZ09pXsttihuSLurPl/view?usp=sharing" target='_blank' rel='noopener noreferrer'>
                 <button className='btn btn-lg'>Download Resume</button>
               </a>
             </div>
@@ -44,7 +44,7 @@ function Banner() {
               <a href="https://github.com/Naominm" target='_blank' rel='noopener noreferrer'>
                 <FaGithub className='text-white' />
               </a>
-              <a href="https://www.linkedin.com/in/naomi-mbugua-b18984245/" target='_blank' rel='noopener noreferrer'>
+              <a href="https://www.linkedin.com/in/mbugua-naomi/" target='_blank' rel='noopener noreferrer'>
                 <FaLinkedin className='text-white' />
               </a>
               <a href="https://wa.me/+254703937319" target='_blank' rel='noopener noreferrer'>
