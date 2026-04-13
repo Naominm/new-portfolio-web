@@ -36,7 +36,7 @@ function Banner() {
               I specialize in creating stunning websites and clean user interfaces. With a passion for design and a commitment to quality, I ensure every project I undertake exceeds expectations.
             </p>
             <div className='flex max-w-max lg:mx-0 mx-auto gap-x-6 items-center mb-16'>
-              <a href="https://drive.google.com/file/d/138Hvp37jXNYD64LZ09pXsttihuSLurPl/view?usp=sharing" target='_blank' rel='noopener noreferrer'>
+              <a href="https://drive.google.com/file/d/1VTV3n8BQqpGOfeWlUE_8ipXknf_8XWI2/view?usp=sharing" target='_blank' rel='noopener noreferrer'>
                 <button className='btn btn-lg'>Download Resume</button>
               </a>
             </div>
