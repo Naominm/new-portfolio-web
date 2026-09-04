@@ -81,7 +81,7 @@ export default function Achievements() {
               data-aos-duration='1000'
               className='flex flex-col bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:bg-white/10'
             >
-              <div className='w-16 h-16 mb-4 flex justify-center items-center rounded-full bg-white/10'>
+              <div className='w-16 h-16 mb-4 flex justify-center items-center rounded-full bg-white/10 text-accent'>
                 {item.logo ? (
                   <img
                     src={item.logo}
@@ -89,10 +89,7 @@ export default function Achievements() {
                     className='w-10 h-10 object-contain'
                   />
                 ) : (
-                  React.cloneElement(item.icon, {
-                    size: '1.75em',
-                    color: '#00bcd4',
-                  })
+                  React.cloneElement(item.icon, { size: '1.75em' })
                 )}
               </div>
 

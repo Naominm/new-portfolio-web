@@ -88,7 +88,7 @@ function Contact({ setNavbarVisible }) {
             className="flex-1 flex flex-col justify-start items-start lg:mb-0 lg:ml-40 mb-8 lg:mb-0"
           >
             <div>
-              <h4 className="text-xl uppercase text-blue-600 font-medium mb-2 tracking-wide lg:text-4xl font-secondary">
+              <h4 className="text-xl uppercase text-accent font-medium mb-2 tracking-wide lg:text-4xl font-secondary">
                 Get in touch
               </h4>
               <h2 className="text-4xl md:text-3xl leading-none mb-4 text-gray-100 lg:text-4xl font-secondary">
@@ -116,27 +116,27 @@ function Contact({ setNavbarVisible }) {
           >
             <input
               name="user_email"
-              className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all"
+              className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-accent transition-all"
               placeholder="Email Address"
               type="email"
               required
             />
             <input
               name="subject"
-              className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all"
+              className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-accent transition-all"
               placeholder="Subject"
               type="text"
               required
             />
             <textarea
               name="message"
-              className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-blue-500 transition-all resize-none"
+              className="bg-gray-100 border border-gray-300 rounded-md py-2 px-4 outline-none w-full placeholder-gray-500 focus:border-accent transition-all resize-none"
               placeholder="Message"
               rows="4"
               required
             ></textarea>
             <button
-              className={`bg-blue-600 text-white py-2 px-4 rounded-md shadow-md transition-all duration-300 flex items-center justify-center ${
+              className={`gradient text-white py-2 px-4 rounded-md shadow-md transition-all duration-300 flex items-center justify-center ${
                 emailStatus === 'sending' ? 'cursor-not-allowed' : ''
               }`}
               type="submit"

@@ -25,6 +25,14 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Naomi Mbugua</title>
+    <script>
+      // runs before paint so the chosen theme never flashes the other one
+      try {
+        if (localStorage.getItem('theme') === 'professional') {
+          document.documentElement.dataset.theme = 'professional';
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

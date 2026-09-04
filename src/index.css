@@ -4,6 +4,45 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arvo&family=Climate+Crisis&family=Honk&family=Playfair+Display&family=Poor+Story&family=Rajdhani:wght@500&family=Roboto+Condensed:ital@1&family=Single+Day&display=swap');
 
+/* ── Themes ────────────────────────────────────────────────────────────────
+   Every colour below is a token. Components never hardcode a hue, so adding
+   a theme means adding one block here. --btn-* are button GROUNDS (dark, so
+   white label text stays readable); --txt-* are for gradient TEXT and must
+   stay light against the page.                                            */
+:root {
+  /* Signature: violet ground, magenta accent */
+  --site-bg: url('./assets/site-bg.jpg');
+  --site-color: #1a0b2e;
+  --accent-rgb: 184 9 195;
+  --primary-rgb: 10 10 10;
+  --panel: #df06f3;
+  --panel-mobile: #d006e3;
+  --btn-a: #00bcd4;
+  --btn-b: #2196f3;
+  --btn-c: #1e88e5;
+  --btn-d: #1565c0;
+  --txt-a: #00bcd4;
+  --txt-b: #1e88e5;
+  --btn-shadow: rgba(0, 188, 212, 0.51);
+}
+
+:root[data-theme='professional'] {
+  /* Professional: navy ground, sky accent. All values >= 4.5:1 on the ground */
+  --site-bg: linear-gradient(165deg, #0b1424 0%, #111c33 45%, #16233d 100%);
+  --site-color: #0b1424;
+  --accent-rgb: 56 189 248;
+  --primary-rgb: 11 20 36;
+  --panel: #1d4ed8;
+  --panel-mobile: #1d4ed8;
+  --btn-a: #0369a1;
+  --btn-b: #1d4ed8;
+  --btn-c: #1e40af;
+  --btn-d: #1e3a8a;
+  --txt-a: #38bdf8;
+  --txt-b: #60a5fa;
+  --btn-shadow: rgba(37, 99, 235, 0.35);
+}
+
 .font-secondary {
   font-family: 'Rajdhani', sans-serif;
 }
@@ -24,25 +63,35 @@
 .btn {
   background-image: linear-gradient(
     92.23deg,
-    #00bcd4 21.43%,  /* cyan */
-    #2196f3 53.63%,  /* light blue */
-    #1e88e5 100%,    /* blue */
-    #1565c0 117.04%  /* dark blue */
+    var(--btn-a) 21.43%,
+    var(--btn-b) 53.63%,
+    var(--btn-c) 100%,
+    var(--btn-d) 117.04%
   );
-  box-shadow: 0px 4.42184px 107.23px rgba(0, 188, 212, 0.51);
+  box-shadow: 0px 4.42184px 107.23px var(--btn-shadow);
 }
 
 .btn:hover {
   background-image: linear-gradient(
     92.23deg,
-    #1565c0 21.43%,  /* dark blue */
-    #1e88e5 53.63%,  /* blue */
-    #2196f3 100%,    /* light blue */
-    #00bcd4 117.04%  /* cyan */
+    var(--btn-d) 21.43%,
+    var(--btn-c) 53.63%,
+    var(--btn-b) 100%,
+    var(--btn-a) 117.04%
   );
 }
 
 .gradient, .active {
+  background-image: linear-gradient(
+    92.23deg,
+    var(--btn-d) 21.43%,
+    var(--btn-c) 53.63%,
+    var(--btn-b) 100%,
+    var(--btn-a) 117.04%
+  );
+}
+
+.active {
   background-image: linear-gradient(
     92.23deg,
     #1565c0 21.43%,  /* dark blue */
@@ -68,6 +117,8 @@
 @layer base {
   body {
     @apply text-lg leading-8 text-white;
+    background-color: var(--site-color);
+    transition: background-color 0.4s ease;
   }
   h2 {
     @apply text-[32px] mb-6 tracking-[10%] uppercase;
@@ -88,8 +139,8 @@
     @apply text-base;
   }
   .text-gradient {
-    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#00bcd4] to-[#1e88e5]
-            font-bold hover:from-[#1e88e5] hover:to-[#00bcd4];
+    @apply text-transparent bg-clip-text font-bold;
+    background-image: linear-gradient(to right, var(--txt-a), var(--txt-b));
   }
   .section {
     @apply py-8 lg:py-24 lg:h-screen flex items-center;
@@ -230,7 +281,7 @@
   /* background-color: transparent; */
   margin-left: 2%;
   margin-right: 2%;
-  background-color: #df06f3;
+  background-color: var(--panel);
  
   /* justify-content: space-around; */
 }
@@ -239,7 +290,7 @@
 margin-top: 4%;
 height: 200px;
 margin-left: 2%;
-background:#D006E3;
+background: var(--panel-mobile);
 width: 250px;
 
 

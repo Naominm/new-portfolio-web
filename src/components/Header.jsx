@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeToggle from './ThemeToggle.jsx'
 // import logo from '../assets/logo.png'
 
 function Header() {
@@ -10,9 +11,12 @@ function Header() {
             <h1 className='text-gradient text-2xl md:text-4xl font-bold font-secondary'>Naomi</h1>
             <h1 className='text-white text-2xl md:text-4xl font-bold font-secondary'>Mbugua</h1>
           </div>
-          <a href="#contact">
-            <button className='btn btn-lg '>Work With Me</button>
-           </a>
+          <div className='flex items-center gap-x-3'>
+            <ThemeToggle />
+            <a href="#contact">
+              <button className='btn btn-lg '>Work With Me</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

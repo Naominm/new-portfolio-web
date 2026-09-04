@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-   
+
     container:{
       padding:{
         default:'15px'
@@ -15,14 +15,15 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px',
     },
-    
+
     extend: {
       colors:{
-        primary:'#0a0a0a',
-        accent:'#b809c3',
+        // channel triplets so opacity modifiers (bg-accent/20) still work
+        primary:'rgb(var(--primary-rgb) / <alpha-value>)',
+        accent:'rgb(var(--accent-rgb) / <alpha-value>)',
       },
       backgroundImage:{
-        site:"url('./assets/site-bg.jpg')",
+        site:'var(--site-bg)',
       },
     },
   },
