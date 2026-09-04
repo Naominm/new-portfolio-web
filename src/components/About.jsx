@@ -6,6 +6,12 @@ import CountUp from 'react-countup';
 import img1 from '../assets/second.jpg';
 import CardList from '../components/CardList';
 
+// First attachment: Frontend Web Development Intern, Saliq Software Solutions (Jun 2023)
+const EXPERIENCE_START = new Date('2023-06-01');
+const yearsOfExperience = Math.floor(
+  (Date.now() - EXPERIENCE_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000)
+);
+
 function About() {
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -36,10 +42,10 @@ function About() {
             <div className='flex flex-col sm:flex-row gap-y-6 sm:gap-x-6 lg:gap-x-10 mb-12 mt-5'>
               <div className='text-center sm:text-left'>
                 <div className='text-[40px] font-secondary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={4} duration={8} /> : null}
+                  {inView ? <CountUp start={0} end={yearsOfExperience} duration={8} /> : null} +
                 </div>
                 <div className='font-secondary text-md tracking-[1px]'>
-                  years of <br /> Programming
+                  years of <br /> Experience
                 </div>
               </div>
               <div className='text-center sm:text-left'>

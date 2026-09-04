@@ -4,6 +4,7 @@ import Loader from './components/Loader.jsx';
 import Banner from './components/Banner.jsx';
 import Navbar from './components/Navbar.jsx';
 import About from './components/About.jsx';
+import Experience from './components/Experience.jsx';
 import Services from './components/Services.jsx';
 import Projects from './components/Projects.jsx';
 import Achievements from './components/Achievements.jsx';
@@ -30,6 +31,7 @@ function App() {
           <Banner />
           <Navbar />  {/* Navbar with links to sections, including Contact */}
           <About />
+          <Experience />
           <Services />
           <Projects />
           <Achievements />
