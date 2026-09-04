@@ -160,6 +160,8 @@
 }
 .homeImage img {
   object-fit: cover;
+  /* portrait crops from the centre by default, which cuts the head */
+  object-position: center 18%;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;

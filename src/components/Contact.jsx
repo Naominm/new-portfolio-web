@@ -26,7 +26,7 @@ function Contact({ setNavbarVisible }) {
         (result) => {
           console.log('Email sent successfully:', result.text);
           setEmailStatus('success');
-          setNavbarVisible(true);
+          setNavbarVisible?.(true);
           setTimeout(() => {
             setEmailStatus('idle');
           }, 5000); // Reset status after 5 seconds
@@ -34,7 +34,7 @@ function Contact({ setNavbarVisible }) {
         (error) => {
           console.error('Email sending error:', error.text);
           setEmailStatus('error');
-          setNavbarVisible(true);
+          setNavbarVisible?.(true);
           setTimeout(() => {
             setEmailStatus('idle');
           }, 5000); // Reset status after 5 seconds
@@ -45,13 +45,13 @@ function Contact({ setNavbarVisible }) {
 
   const handleFocus = () => {
     if (window.innerWidth < 1024) { // Adjust breakpoint as needed
-      setNavbarVisible(false);
+      setNavbarVisible?.(false);
     }
   };
 
   const handleBlur = () => {
     if (window.innerWidth < 1024) { // Adjust breakpoint as needed
-      setNavbarVisible(true);
+      setNavbarVisible?.(true);
     }
   };
 

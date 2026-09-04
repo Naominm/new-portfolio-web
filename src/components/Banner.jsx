@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import img1 from '../assets/first.jpg';  
+import img1 from '../assets/passport-pic.png';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import AOS from 'aos';
