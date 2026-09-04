@@ -77,43 +77,62 @@ function Experience() {
       <div className='container mx-auto p-5'>
         <h2 className='h2 text-accent text-center font-secondary text-4xl font-bold'>Experience</h2>
 
-        <div className='relative mt-12 max-w-[900px] mx-auto'>
-          {/* timeline spine */}
-          <div className='absolute left-[7px] sm:left-[11px] top-2 bottom-2 w-[2px] bg-white/20' />
+        <div className='relative mt-14 max-w-[1100px] mx-auto'>
+          {/* timeline spine: left edge on mobile, centred from lg up */}
+          <div className='absolute top-2 bottom-2 w-[2px] bg-white/20 left-[7px] lg:left-1/2 lg:-translate-x-1/2' />
 
-          {experiences.map((item, index) => (
-            <div
-              key={index}
-              data-aos='fade-up'
-              data-aos-duration='1200'
-              className='relative pl-10 sm:pl-14 pb-12 last:pb-0'
-            >
-              {/* timeline dot */}
-              <span className='absolute left-0 top-2 w-4 h-4 sm:w-6 sm:h-6 rounded-full gradient border-4 border-primary' />
+          {experiences.map((item, index) => {
+            const isLeft = index % 2 === 0;
 
-              <div className='bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 backdrop-blur-sm transition-transform duration-500 hover:scale-[1.02] hover:bg-white/10'>
-                <h3 className='text-white text-xl sm:text-2xl font-secondary font-semibold leading-snug mb-2'>
-                  {item.role}
-                </h3>
+            return (
+              <div
+                key={index}
+                className='relative pb-12 last:pb-0 lg:grid lg:grid-cols-2 lg:gap-x-16'
+              >
+                {/* node on the spine */}
+                <span className='absolute z-10 top-2 w-4 h-4 lg:w-5 lg:h-5 rounded-full gradient border-4 border-primary left-0 lg:left-1/2 lg:-translate-x-1/2' />
 
-                <div className='flex flex-col sm:flex-row sm:items-center gap-y-1 sm:gap-x-6 mb-4 font-secondary text-base'>
-                  <span className='flex items-center gap-x-2 text-gradient'>
-                    <BsBuilding /> {item.company}
-                  </span>
-                  <span className='flex items-center gap-x-2 text-white/60'>
-                    <BsCalendar3 /> {item.period}
-                  </span>
-                  <span className='text-white/40 text-sm uppercase tracking-[1px]'>{item.type}</span>
+                <div
+                  data-aos={isLeft ? 'fade-right' : 'fade-left'}
+                  data-aos-duration='1200'
+                  className={`relative pl-10 lg:pl-0 ${
+                    isLeft ? 'lg:col-start-1' : 'lg:col-start-2'
+                  }`}
+                >
+                  {/* connector from the card across the gutter to the spine */}
+                  <span
+                    className={`hidden lg:block absolute top-[17px] w-8 h-[2px] bg-white/20 ${
+                      isLeft ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'
+                    }`}
+                  />
+
+                  <div className='bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 backdrop-blur-sm transition-transform duration-500 hover:scale-[1.02] hover:bg-white/10'>
+                    <h3 className='text-white text-xl sm:text-2xl font-secondary font-semibold leading-snug mb-2'>
+                      {item.role}
+                    </h3>
+
+                    <div className='flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-1 sm:gap-x-6 mb-4 font-secondary text-base'>
+                      <span className='flex items-center gap-x-2 text-gradient'>
+                        <BsBuilding /> {item.company}
+                      </span>
+                      <span className='flex items-center gap-x-2 text-white/60'>
+                        <BsCalendar3 /> {item.period}
+                      </span>
+                      <span className='text-white/40 text-sm uppercase tracking-[1px]'>
+                        {item.type}
+                      </span>
+                    </div>
+
+                    <ul className='list-disc pl-5 space-y-2 text-white/80 text-base leading-7'>
+                      {item.points.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-
-                <ul className='list-disc pl-5 space-y-2 text-white/80 text-base leading-7'>
-                  {item.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
