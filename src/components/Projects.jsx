@@ -113,14 +113,16 @@ function Projects() {
                                     >
                                         Live Demo <BsArrowUpRight />
                                     </a>
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="h-[48px] px-6 text-sm rounded-full font-medium text-white border border-white/30 flex items-center gap-x-2 font-secondary hover:bg-white/10 transition-colors duration-300"
-                                    >
-                                        <BsGithub /> Code
-                                    </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="h-[48px] px-6 text-sm rounded-full font-medium text-white border border-white/30 flex items-center gap-x-2 font-secondary hover:bg-white/10 transition-colors duration-300"
+                                        >
+                                            <BsGithub /> Code
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </article>

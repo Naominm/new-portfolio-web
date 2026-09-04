@@ -1,3 +1,4 @@
+import portalSms from '../assets/portal-sms.png';
 import blogit from '../assets/blogit.png';
 import mutc from '../assets/mutc.png';
 import elingo from '../assets/elingo.png';
@@ -8,6 +9,15 @@ import urbanHaven from '../assets/urban-haven.png';
 // Adding a project = one object in this array. `category` feeds the filter bar,
 // so a new category shows up as a pill on its own.
 const projects = [
+  {
+    title: 'School Manager',
+    imgSrc: portalSms,
+    category: 'Full Stack',
+    description:
+      'A PERN school management system covering markbook, attendance, report cards, fees and merit lists, with role-based dashboards for administrators, teachers and parents.',
+    technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'REST APIs'],
+    liveDemo: 'https://school-management-system-frontend-rouge.vercel.app',
+  },
   {
     title: 'Blogit',
     imgSrc: blogit,
