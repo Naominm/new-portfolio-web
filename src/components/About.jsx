@@ -12,6 +12,12 @@ const yearsOfCoding = Math.floor(
   (Date.now() - CODING_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000)
 );
 
+// Paid work since the first attachment at Saliq Software Solutions (Jun 2023)
+const PROFESSIONAL_START = new Date('2023-06-01');
+const yearsProfessional = Math.floor(
+  (Date.now() - PROFESSIONAL_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000)
+);
+
 function About() {
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -50,20 +56,20 @@ function About() {
               </div>
               <div className='text-center sm:text-left'>
                 <div className='text-[40px] font-secondary text-gradient mb-2'>
+                  {inView ? <CountUp start={0} end={yearsProfessional} duration={8} /> : null} +
+                </div>
+                <div className='font-secondary text-md tracking-[1px]'>
+                  years <br /> Professional
+                </div>
+              </div>
+              <div className='text-center sm:text-left'>
+                <div className='text-[40px] font-secondary text-gradient mb-2'>
                   {inView ? <CountUp start={0} end={20} duration={8} /> : null} +
                 </div>
                 <div className='font-secondary text-md tracking-[1px]'>
                   Projects <br /> completed
                 </div>
               </div>
-              {/* <div className='text-center sm:text-left'>
-                <div className='text-[40px] font-secondary text-gradient mb-2'>
-                  {inView ? <CountUp start={100} end={1} duration={5} /> : null} +
-                </div>
-                <div className='font-secondary text-md tracking-[1px]'>
-                  Clients
-                </div>
-              </div> */}
             </div>
             <div className='flex justify-center sm:justify-start'>
               <a href="#contact"><button className='btn btn-lg p-4 text-xl font-secondary'>Work With Me</button></a>
