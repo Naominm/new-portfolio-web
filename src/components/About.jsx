@@ -6,10 +6,10 @@ import CountUp from 'react-countup';
 import img1 from '../assets/second.jpg';
 import CardList from '../components/CardList';
 
-// First attachment: Frontend Web Development Intern, Saliq Software Solutions (Jun 2023)
-const EXPERIENCE_START = new Date('2023-06-01');
-const yearsOfExperience = Math.floor(
-  (Date.now() - EXPERIENCE_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000)
+// Coding since the start of the Software Engineering degree (Sep 2020)
+const CODING_START = new Date('2020-09-01');
+const yearsOfCoding = Math.floor(
+  (Date.now() - CODING_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000)
 );
 
 function About() {
@@ -42,15 +42,15 @@ function About() {
             <div className='flex flex-col sm:flex-row gap-y-6 sm:gap-x-6 lg:gap-x-10 mb-12 mt-5'>
               <div className='text-center sm:text-left'>
                 <div className='text-[40px] font-secondary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={yearsOfExperience} duration={8} /> : null} +
+                  {inView ? <CountUp start={0} end={yearsOfCoding} duration={8} /> : null} +
                 </div>
                 <div className='font-secondary text-md tracking-[1px]'>
-                  years of <br /> Experience
+                  years of <br /> Coding
                 </div>
               </div>
               <div className='text-center sm:text-left'>
                 <div className='text-[40px] font-secondary text-gradient mb-2'>
-                  {inView ? <CountUp start={0} end={10} duration={8} /> : null} +
+                  {inView ? <CountUp start={0} end={20} duration={8} /> : null} +
                 </div>
                 <div className='font-secondary text-md tracking-[1px]'>
                   Projects <br /> completed
