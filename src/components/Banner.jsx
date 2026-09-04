@@ -52,7 +52,7 @@ function Banner() {
               </a>
             </div>
           </div>
-          <div data-aos="fade-up" data-aos-duration="1400" className='hidden lg:flex flex-1 max-w-[320px] lg:max-w-[500px]'>
+          <div data-aos="fade-up" data-aos-duration="1400" className='flex justify-center flex-1 w-full max-w-[320px] lg:max-w-[500px] mx-auto lg:mx-0'>
             <div className="homeContainerPic">
               <div className="homeImageBoarder">
                 <div className="homeImage">
