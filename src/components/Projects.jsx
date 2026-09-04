@@ -1,118 +1,136 @@
-import React, { useEffect } from "react";
-import img1 from "../assets/blogit.png";
-import img2 from "../assets/mutc.png";
-import img3 from "../assets/elingo.png";
-import img4 from "../assets/secondHand.png";
-import img5 from "../assets/zarph.png";
-import img6 from "../assets/urban-haven.png";
-
+import React, { useEffect, useMemo, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BsGithub, BsArrowUpRight } from "react-icons/bs";
+import allProjects from "../data/projects";
+
+const PAGE_SIZE = 6;
 
 function Projects() {
+    const [activeCategory, setActiveCategory] = useState("All");
+    const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
     useEffect(() => {
-        AOS.init({
-            easing: "ease-in-out",
-        });
+        AOS.init({ easing: "ease-in-out" });
     }, []);
 
-    const projects = [
-        {
-            title: "Blogit",
-            imgSrc: img1,
-            liveDemo: "https://blog-it-git-master-naomi-mbuguas-projects.vercel.app/",
-            github: "https://github.com/Naominm/blogIt.git",
-            technologies: "React,Material UI, NodeJs, Express, PostgreSQl",
-            description: "A full stack application blogging page",
-        },
-        {
-            title: "MUTC",
-            imgSrc: img2,
-            liveDemo: "https://mutc-website-wheat.vercel.app/",
-            github: "https://github.com/Naominm/mutc-website.git",
-            technologies: "React, Typescript,",
-            description: "A web application for a tech club",
-        },
-        {
-            title: "Zarph Tours",
-            imgSrc: img5,
-            liveDemo: "https://zaph-tours-flame.vercel.app/",
-            github: "https://github.com/Naominm/zaph-tours.git",
-            technologies: "React,CSS",
-            description: "Frontend application for a travel company",
-        },
-       
-        
-        {
-            title: "Elingo",
-            imgSrc: img3,
-            liveDemo: "https://language-model.vercel.app",
-            github: "https://github.com/Naominm/language-model.git",
-            technologies: "Next.js, Tailwind CSS, CSS",
-            description: "A language learning platform for various languages.",
-        },
-        {
-            title: "Second Hand",
-            imgSrc: img4,
-            liveDemo: "https://flagship-secondhand.vercel.app",
-            github: "https://github.com/Naominm/react-flagship-secondhand.git",
-            technologies: "CSS, React",
-            description: "A marketplace for buying and selling second-hand goods.",
-        },
-        {
-            title: "Urban Haven",
-            imgSrc: img6,
-            liveDemo: "https://urban-haven-phi.vercel.app/",
-            github: "https://github.com/Naominm/URBAN-HAVEN.git",
-            technologies: "HTML CSS",
-            description: "Appartment website",
-        },
-    ];
+    const categories = useMemo(
+        () => ["All", ...new Set(allProjects.map((project) => project.category))],
+        []
+    );
+
+    const filtered = useMemo(
+        () =>
+            activeCategory === "All"
+                ? allProjects
+                : allProjects.filter((project) => project.category === activeCategory),
+        [activeCategory]
+    );
+
+    const visible = filtered.slice(0, visibleCount);
+
+    // A newly picked category starts from the top again.
+    const handleFilter = (category) => {
+        setActiveCategory(category);
+        setVisibleCount(PAGE_SIZE);
+    };
 
     return (
-        <section id="projects" className="section py-0 mt-20 mb-40">
+        <section id="projects" className="section lg:h-auto py-0 mt-20 mb-40">
             <div className="container mx-auto px-5">
-                <h2 className="text-accent text-center font-secondary text-4xl sm:text-3xl text-2xl font-bold">Projects</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    {projects.map((project, index) => (
-                        <div
-                            key={index}
-                            data-aos="fade-right"
-                            data-aos-duration="2000"
-                            className="group relative overflow-hidden border-2 border-gray-300 rounded-xl shadow-lg"
+                <h2 className="h2 text-accent text-center font-secondary text-4xl font-bold">
+                    Projects
+                </h2>
+
+                {/* Only worth showing once there is more than one category to pick from. */}
+                {categories.length > 2 && (
+                    <div className="flex flex-wrap justify-center gap-3 mb-12">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => handleFilter(category)}
+                                className={`px-5 py-2 rounded-full font-secondary text-base transition-all duration-300 border ${
+                                    activeCategory === category
+                                        ? "gradient border-transparent text-white"
+                                        : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {visible.map((project) => (
+                        <article
+                            key={project.title}
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            className="group flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:bg-white/10"
                         >
-                            <div className="cursor-pointer group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
-                            <img
-                                className="group-hover:scale-125 transition-all duration-100"
-                                src={project.imgSrc}
-                                alt={project.title}
-                            />
-                            <div className="absolute inset-0 flex flex-col justify-center items-center p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-50 text-center text-white">
-                                <h3 className="text-2xl sm:text-xl text-lg mb-2">{project.title}</h3>
-                                <p className="mb-4 text-base sm:text-sm text-xs">{project.description}</p>
-                                <p className="mb-4 text-base sm:text-sm text-xs">{project.technologies}</p>
-                                <div className="flex space-x-4">
+                            <div className="overflow-hidden aspect-video bg-black/30">
+                                <img
+                                    src={project.imgSrc}
+                                    alt={`${project.title} screenshot`}
+                                    loading="lazy"
+                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                                />
+                            </div>
+
+                            <div className="flex flex-col flex-1 p-5">
+                                <h3 className="text-white text-xl font-secondary font-semibold leading-snug mb-2">
+                                    {project.title}
+                                </h3>
+                                <p className="text-white/70 text-base leading-7 mb-4">
+                                    {project.description}
+                                </p>
+
+                                <ul className="flex flex-wrap gap-2 mb-5">
+                                    {project.technologies.map((tech) => (
+                                        <li
+                                            key={tech}
+                                            className="px-3 py-1 rounded-full bg-white/10 text-white/70 font-secondary text-sm"
+                                        >
+                                            {tech}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* mt-auto keeps the links on a common baseline across the row */}
+                                <div className="flex flex-wrap gap-3 mt-auto">
                                     <a
                                         href={project.liveDemo}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded-lg text-sm sm:text-xs"
+                                        className="btn btn-sm flex items-center gap-x-2 font-secondary"
                                     >
-                                        Live Demo
+                                        Live Demo <BsArrowUpRight />
                                     </a>
                                     <a
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white py-2 px-4 rounded-lg text-sm sm:text-xs"
+                                        className="h-[48px] px-6 text-sm rounded-full font-medium text-white border border-white/30 flex items-center gap-x-2 font-secondary hover:bg-white/10 transition-colors duration-300"
                                     >
-                                        GitHub
+                                        <BsGithub /> Code
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
+
+                {visibleCount < filtered.length && (
+                    <div className="flex justify-center mt-12">
+                        <button
+                            onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+                            className="btn btn-lg p-4 text-xl font-secondary"
+                        >
+                            Show more
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
