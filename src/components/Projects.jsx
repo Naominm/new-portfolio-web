@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { BsGithub, BsArrowUpRight } from "react-icons/bs";
+import { BsGithub, BsArrowUpRight, BsTrophy } from "react-icons/bs";
 import allProjects from "../data/projects";
 
 const PAGE_SIZE = 6;
@@ -79,6 +79,12 @@ function Projects() {
                             </div>
 
                             <div className="flex flex-col flex-1 p-5">
+                                {project.award && (
+                                    <span className="inline-flex items-center gap-x-2 self-start mb-3 px-3 py-1 rounded-full bg-accent/20 border border-accent/40 text-white font-secondary text-sm">
+                                        <BsTrophy /> {project.award}
+                                    </span>
+                                )}
+
                                 <h3 className="text-white text-xl font-secondary font-semibold leading-snug mb-2">
                                     {project.title}
                                 </h3>

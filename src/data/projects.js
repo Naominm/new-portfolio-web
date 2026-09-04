@@ -39,8 +39,10 @@ const projects = [
     title: 'Elingo',
     imgSrc: elingo,
     category: 'Frontend',
-    description: 'A language learning platform for various languages.',
+    description:
+      'A neural machine translator built for the KAPS inter-university hackathon. I built the frontend.',
     technologies: ['Next.js', 'Tailwind CSS', 'CSS'],
+    award: 'KAPS Hackathon — Category Winner',
     liveDemo: 'https://language-model.vercel.app',
     github: 'https://github.com/Naominm/language-model.git',
   },
