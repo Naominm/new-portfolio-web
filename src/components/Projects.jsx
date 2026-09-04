@@ -93,7 +93,7 @@ function Projects() {
                                 </p>
 
                                 <ul className="flex flex-wrap gap-2 mb-5">
-                                    {project.technologies.map((tech) => (
+                                    {(project.technologies || []).map((tech) => (
                                         <li
                                             key={tech}
                                             className="px-3 py-1 rounded-full bg-white/10 text-white/70 font-secondary text-sm"

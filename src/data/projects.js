@@ -1,4 +1,5 @@
 import portalSms from '../assets/portal-sms.png';
+import advocatesPortal from '../assets/advocates-portal.png';
 import blogit from '../assets/blogit.png';
 import mutc from '../assets/mutc.png';
 import elingo from '../assets/elingo.png';
@@ -17,6 +18,14 @@ const projects = [
       'A PERN school management system covering markbook, attendance, report cards, fees and merit lists, with role-based dashboards for administrators, teachers and parents.',
     technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'REST APIs'],
     liveDemo: 'https://school-management-system-frontend-rouge.vercel.app',
+  },
+  {
+    title: 'Advocates Portal',
+    imgSrc: advocatesPortal,
+    category: 'Full Stack',
+    description:
+      'A case management system for the Advocates Complaints Commission, Office of the Attorney General: complaint intake, case registry, advocate roll, vetting, IHADR sessions, certificates and reporting, under role-based access.',
+    liveDemo: 'https://advocates-portal-management-system-sigma.vercel.app',
   },
   {
     title: 'Blogit',
