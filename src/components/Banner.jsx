@@ -21,9 +21,11 @@ function Banner() {
             <div className='text-2xl mb-8 lg:text-4xl font-secondary font-semibold uppercase leading-[1]'>
               <span className='mr-4 text-white'>I am a</span>
               <TypeAnimation sequence={[
-                  'Web Developer',
+                  'Full Stack Developer',
                   2000,
-                  'FullStack Developer',
+                  'Secure Systems Developer',
+                  2000,
+                  'Software Engineer',
                   2000,
                 ]}
                 speed={50}
@@ -33,7 +35,7 @@ function Banner() {
               />
             </div>
             <p className='mb-12 max-w-lg mx-auto lg:mx-0'>
-              I specialize in creating stunning websites and clean user interfaces. With a passion for design and a commitment to quality, I ensure every project I undertake exceeds expectations.
+              I build secure, scalable full stack applications and the REST APIs behind them. My work spans public-sector digital transformation &mdash; case management, school administration and ICT asset systems running in production.
             </p>
             <div className='flex max-w-max lg:mx-0 mx-auto gap-x-6 items-center mb-16'>
               <a href="https://drive.google.com/file/d/1zFcAqOhhDYarSvXsgNRvQF1vmlEs1Ubo/view?usp=sharing" target='_blank' rel='noopener noreferrer'>
