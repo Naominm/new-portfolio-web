@@ -1,5 +1,6 @@
 import portalSms from '../assets/portal-sms.png';
 import advocatesPortal from '../assets/advocates-portal.png';
+import ictAsset from '../assets/ict-asset-ticketing.png';
 import blogit from '../assets/blogit.png';
 import mutc from '../assets/mutc.png';
 import elingo from '../assets/elingo.png';
@@ -28,6 +29,26 @@ const projects = [
     liveDemo: 'https://advocates-portal-management-system-sigma.vercel.app',
   },
   {
+    title: 'ICT Asset & Ticketing System',
+    imgSrc: ictAsset,
+    category: 'Full Stack',
+    description:
+      'An ICT asset register with assignments, ticketing, reporting and a live audit trail for the State Department for Justice. Co-developed during the Presidential Digital Talent Programme.',
+    technologies: ['Next.js', 'React'],
+    liveDemo: 'https://sdoj-ict-asset-management-system.vercel.app/',
+  },
+  {
+    title: 'Elingo',
+    imgSrc: elingo,
+    category: 'Frontend',
+    description:
+      'A neural machine translator built for the KAPS inter-university hackathon. I built the frontend.',
+    technologies: ['Next.js', 'Tailwind CSS', 'CSS'],
+    award: 'KAPS Hackathon — Category Winner',
+    liveDemo: 'https://language-model.vercel.app',
+    github: 'https://github.com/Naominm/language-model.git',
+  },
+  {
     title: 'Blogit',
     imgSrc: blogit,
     category: 'Full Stack',
@@ -53,17 +74,6 @@ const projects = [
     technologies: ['React', 'CSS'],
     liveDemo: 'https://zaph-tours-flame.vercel.app/',
     github: 'https://github.com/Naominm/zaph-tours.git',
-  },
-  {
-    title: 'Elingo',
-    imgSrc: elingo,
-    category: 'Frontend',
-    description:
-      'A neural machine translator built for the KAPS inter-university hackathon. I built the frontend.',
-    technologies: ['Next.js', 'Tailwind CSS', 'CSS'],
-    award: 'KAPS Hackathon — Category Winner',
-    liveDemo: 'https://language-model.vercel.app',
-    github: 'https://github.com/Naominm/language-model.git',
   },
   {
     title: 'Second Hand',
