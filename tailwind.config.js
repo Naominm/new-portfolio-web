@@ -4,8 +4,14 @@ module.exports = {
   theme: {
 
     container:{
+      center: true,
+      // NB: the key must be DEFAULT. Lowercase 'default' is silently ignored,
+      // which is why the container used to sit flush against the viewport.
       padding:{
-        default:'15px'
+        DEFAULT:'1.25rem',
+        sm:'2rem',
+        lg:'3rem',
+        xl:'4rem',
       }
     },
     screens:{

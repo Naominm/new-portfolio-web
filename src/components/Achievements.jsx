@@ -68,7 +68,7 @@ export default function Achievements() {
 
   return (
     <section id='achievements' className='section lg:h-auto py-10'>
-      <div className='container mx-auto p-5'>
+      <div className='container mx-auto py-5'>
         <h2 className='h2 text-accent text-center font-secondary text-4xl font-bold'>
           Achievements
         </h2>

@@ -31,7 +31,7 @@ function About() {
 
   return (
     <section id='about' className='section mb-40 lg:mb-0' ref={ref}>
-      <div className="container mx-auto p-5">
+      <div className="container mx-auto py-5">
         <div className='flex flex-col lg:flex-row gap-y-10 lg:items-center lg:gap-x-20 lg:gap-y-0 min-h-screen'>
           <div data-aos="fade-right" data-aos-duration='2000' className='flex-1 flex justify-center lg:justify-start'>
             <div className="aboutContainerImage">

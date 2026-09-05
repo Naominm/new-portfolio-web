@@ -128,7 +128,7 @@ function Contact({ setNavbarVisible }) {
 
   return (
     <section id='contact' className='lg:section py-10 '>
-      <div className='container mx-auto px-5'>
+      <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row items-center gap-6'>
           <div
             data-aos='flip-up'

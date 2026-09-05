@@ -74,7 +74,7 @@ function Experience() {
 
   return (
     <section id='experience' className='section lg:h-auto mb-40 lg:mb-0'>
-      <div className='container mx-auto p-5'>
+      <div className='container mx-auto py-5'>
         <h2 className='h2 text-accent text-center font-secondary text-4xl font-bold'>Experience</h2>
 
         <div className='relative mt-14 max-w-[1100px] mx-auto'>

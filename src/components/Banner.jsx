@@ -14,7 +14,7 @@ function Banner() {
 
   return (
     <section id='home' className='min-h-[85vh] lg:min-h-[75vh] flex items-center'>
-      <div className='container mx-auto p-5'>
+      <div className='container mx-auto py-5'>
         <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
           <div data-aos="fade-right" data-aos-duration="1400" className='flex-1 text-center lg:text-start font-secondary'>
             <h1 className='text-3xl font-bold leading-[0.8] lg:text-5xl'>Naomi <span>Mbugua</span></h1>
