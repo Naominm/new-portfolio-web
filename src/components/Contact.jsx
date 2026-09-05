@@ -70,13 +70,18 @@ function Contact({ setNavbarVisible }) {
     // Send an explicit parameter object rather than scraping the form, so
     // only these four values can ever reach the template.
     emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, {
-        user_name: name,
-        user_email: email,
-        reply_to: email,
-        subject,
-        message,
-      })
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          user_name: name,
+          user_email: email,
+          reply_to: email,
+          subject,
+          message,
+        },
+        { publicKey: PUBLIC_KEY }
+      )
       .then(
         () => {
           lastSentAt.current = Date.now();
@@ -85,11 +90,18 @@ function Contact({ setNavbarVisible }) {
           setNavbarVisible?.(true);
           setTimeout(() => setEmailStatus('idle'), 5000);
         },
-        () => {
+        (err) => {
+          // EmailJS reports the real cause here: 403 domain/key, 412 service
+          // auth, 422 template recipient, 429 quota.
+          console.error('EmailJS send failed:', err?.status, err?.text, err);
           setEmailStatus('error');
-          setError('Something went wrong. Please email me directly.');
+          setError(
+            err?.status
+              ? `Could not send (${err.status}: ${err.text || 'unknown'}). Please email me directly.`
+              : 'Something went wrong. Please email me directly.'
+          );
           setNavbarVisible?.(true);
-          setTimeout(() => setEmailStatus('idle'), 5000);
+          setTimeout(() => setEmailStatus('idle'), 8000);
         }
       );
   };
