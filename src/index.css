@@ -8,8 +8,28 @@
    Every colour below is a token. Components never hardcode a hue, so adding
    a theme means adding one block here. --btn-* are button GROUNDS (dark, so
    white label text stays readable); --txt-* are for gradient TEXT and must
-   stay light against the page.                                            */
+   stay light against the page.
+
+   Professional is the default and lives on bare :root. Signature is opt-in
+   via the header toggle, which sets data-theme="signature".              */
 :root {
+  /* Professional (default): navy ground, sky accent. All >= 4.5:1 on ground */
+  --site-bg: linear-gradient(165deg, #0b1424 0%, #111c33 45%, #16233d 100%);
+  --site-color: #0b1424;
+  --accent-rgb: 56 189 248;
+  --primary-rgb: 11 20 36;
+  --panel: #1d4ed8;
+  --panel-mobile: #1d4ed8;
+  --btn-a: #0369a1;
+  --btn-b: #1d4ed8;
+  --btn-c: #1e40af;
+  --btn-d: #1e3a8a;
+  --txt-a: #38bdf8;
+  --txt-b: #60a5fa;
+  --btn-shadow: rgba(37, 99, 235, 0.35);
+}
+
+:root[data-theme='signature'] {
   /* Signature: violet ground, magenta accent */
   --site-bg: url('./assets/site-bg.jpg');
   --site-color: #1a0b2e;
@@ -24,23 +44,6 @@
   --txt-a: #00bcd4;
   --txt-b: #1e88e5;
   --btn-shadow: rgba(0, 188, 212, 0.51);
-}
-
-:root[data-theme='professional'] {
-  /* Professional: navy ground, sky accent. All values >= 4.5:1 on the ground */
-  --site-bg: linear-gradient(165deg, #0b1424 0%, #111c33 45%, #16233d 100%);
-  --site-color: #0b1424;
-  --accent-rgb: 56 189 248;
-  --primary-rgb: 11 20 36;
-  --panel: #1d4ed8;
-  --panel-mobile: #1d4ed8;
-  --btn-a: #0369a1;
-  --btn-b: #1d4ed8;
-  --btn-c: #1e40af;
-  --btn-d: #1e3a8a;
-  --txt-a: #38bdf8;
-  --txt-b: #60a5fa;
-  --btn-shadow: rgba(37, 99, 235, 0.35);
 }
 
 .font-secondary {

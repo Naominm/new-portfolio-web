@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { BsPalette } from 'react-icons/bs';
 
 const STORAGE_KEY = 'theme';
+const PROFESSIONAL = 'professional'; // the default, carries no attribute
 const SIGNATURE = 'signature';
-const PROFESSIONAL = 'professional';
 
 // Read whatever the inline script in index.html already applied, so the
 // button label matches the paint on first render.
 function initialTheme() {
   try {
-    return localStorage.getItem(STORAGE_KEY) === PROFESSIONAL
-      ? PROFESSIONAL
-      : SIGNATURE;
+    return localStorage.getItem(STORAGE_KEY) === SIGNATURE
+      ? SIGNATURE
+      : PROFESSIONAL;
   } catch (e) {
-    return SIGNATURE;
+    return PROFESSIONAL;
   }
 }
 
@@ -21,9 +21,9 @@ function ThemeToggle() {
   const [theme, setTheme] = useState(initialTheme);
 
   useEffect(() => {
-    // signature is the bare :root block, so it carries no attribute
-    if (theme === PROFESSIONAL) {
-      document.documentElement.dataset.theme = PROFESSIONAL;
+    // professional is the bare :root block, so it carries no attribute
+    if (theme === SIGNATURE) {
+      document.documentElement.dataset.theme = SIGNATURE;
     } else {
       delete document.documentElement.dataset.theme;
     }
@@ -34,7 +34,7 @@ function ThemeToggle() {
     }
   }, [theme]);
 
-  const next = theme === SIGNATURE ? PROFESSIONAL : SIGNATURE;
+  const next = theme === PROFESSIONAL ? SIGNATURE : PROFESSIONAL;
 
   return (
     <button
